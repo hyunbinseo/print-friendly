@@ -1,0 +1,71 @@
+/* Normalization */
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+html {
+	line-height: 1.4;
+}
+body {
+	margin: 0;
+}
+strong {
+	font-weight: bolder;
+}
+
+/* Common Styles */
+
+h2::before {
+	content: '';
+	display: block;
+	border-bottom: 1px solid lightgray;
+	margin: 0.83em 0; /* user-agent */
+}
+hr {
+	height: 0;
+	color: lightgray;
+	margin: 0.83em 0; /* match h2::before */
+}
+ol,
+ul {
+	padding-inline-start: 16px;
+}
+
+/* Media Queries */
+
+@media screen {
+	body {
+		padding: 1rem;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	html {
+		display: flex;
+		justify-content: center;
+		background-color: lightgray;
+	}
+	body {
+		background-color: white;
+		max-width: 768px;
+		margin: 3rem auto;
+		padding: 2rem;
+		height: fit-content; /* Required in Chrome 120.0. */
+	}
+}
+
+@media print {
+	h1,
+	h2,
+	h3 {
+		/* Should be supported, but does not work in Firefox 121.0. */
+		/* Workaround https://support.mozilla.org/en/questions/1306825 */
+		break-after: avoid;
+	}
+	ol,
+	ul {
+		break-inside: avoid;
+	}
+}

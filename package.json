@@ -1,0 +1,29 @@
+{
+	"name": "print-friendly",
+	"version": "0.0.1",
+	"description": "Convert a markdown file to a print-ready, styled HTML file",
+	"main": "index.js",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hyunbinseo/print-friendly.git"
+	},
+	"keywords": [
+		"html",
+		"print",
+		"css",
+		"md",
+		"markdown",
+		"pdf",
+		"convert"
+	],
+	"author": "Hyunbin Seo",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/hyunbinseo/print-friendly/issues"
+	},
+	"homepage": "https://github.com/hyunbinseo/print-friendly#readme",
+	"files": [
+		"dist"
+	]
+}
