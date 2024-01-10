@@ -2,6 +2,8 @@
 
 Responsive CSS for screen and paper. Optimized for printing and PDF conversion.
 
+[한국어](/docs/ko.md)
+
 ## 🚧 Features
 
 - [x] CSS / Stylesheet
