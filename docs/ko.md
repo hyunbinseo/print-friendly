@@ -17,6 +17,7 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
 > 이 패키지는 유의적(semantic) 버전을 따릅니다. 직접 버전 번호를 올릴 수 있도록, 그리고 의도치 않은 주요(breaking) 사항들을 피하기 위해 반드시 jsDelivr URL에 주(major) 버전을 지정해 두세요.
 
 ```html
+<!DOCTYPE html>
 <html>
   <head>
     <!-- print-friendly 스타일 시트를 추가합니다. -->

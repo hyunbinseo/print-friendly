@@ -23,6 +23,7 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
 > This package follows the semantic versioning. To manually bump the stylesheet version, and to avoid unwanted breaking changes, please set the major version in the jsDelivr URL.
 
 ```html
+<!DOCTYPE html>
 <html>
   <head>
     <!-- Add print-friendly stylesheet. -->
