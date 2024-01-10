@@ -32,16 +32,7 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/print-friendly@0/dist/print-friendly.css"
     />
-    <!-- (Optional) Use custom web font. -->
-    <link
-      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "SUIT", sans-serif;
-      }
-    </style>
+    <!-- (Optional) Set custom font-family. -->
   </head>
   <body>
     <!-- Add content here. -->

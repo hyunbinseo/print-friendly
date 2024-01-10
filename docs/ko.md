@@ -26,16 +26,7 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/print-friendly@0/dist/print-friendly.css"
     />
-    <!-- (선택) 사용자 지정 웹 폰트를 사용합니다. -->
-    <link
-      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "SUIT", sans-serif;
-      }
-    </style>
+    <!-- (선택) font-family 스타일을 지정합니다. -->
   </head>
   <body>
     <!-- 이곳에 콘텐츠를 추가합니다. -->
