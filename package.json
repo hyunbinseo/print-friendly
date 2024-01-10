@@ -1,6 +1,6 @@
 {
 	"name": "print-friendly",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Convert a markdown file to a print-ready, styled HTML file",
 	"main": "index.js",
 	"scripts": {},
