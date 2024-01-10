@@ -3,69 +3,83 @@
 *,
 ::before,
 ::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 html {
-	line-height: 1.4;
+  line-height: 1.4;
 }
 body {
-	margin: 0;
+  margin: 0;
 }
 strong {
-	font-weight: bolder;
+  font-weight: bolder;
 }
 
 /* Common Styles */
 
 h2::before {
-	content: '';
-	display: block;
-	border-bottom: 1px solid lightgray;
-	margin: 0.83em 0; /* user-agent */
+  content: "";
+  display: block;
+  border-bottom: 1px solid lightgray;
+  margin: 0.83em 0; /* user-agent */
 }
 hr {
-	height: 0;
-	color: lightgray;
-	margin: 0.83em 0; /* match h2::before */
+  height: 0;
+  color: lightgray;
+  margin: 0.83em 0; /* match h2::before */
 }
 ol,
 ul {
-	padding-inline-start: 16px;
+  padding-inline-start: 16px;
 }
 
 /* Media Queries */
 
 @media screen {
-	body {
-		padding: 1rem;
-	}
+  body {
+    padding: 1rem;
+  }
 }
 
-@media screen and (min-width: 768px) {
-	html {
-		display: flex;
-		justify-content: center;
-		background-color: lightgray;
-	}
-	body {
-		background-color: white;
-		max-width: 768px;
-		margin: 3rem auto;
-		padding: 2rem;
-		height: fit-content; /* Required in Chrome 120.0. */
-	}
+@media screen and (min-width: 21cm) {
+  html {
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+  }
+  body {
+    background-color: white;
+    height: fit-content; /* Required in Chrome 120.0 */
+    max-width: 21cm; /* A4 width */
+    padding: 0.5in; /* Firefox */
+    /* Microsoft Word: 1in */
+    /* Chromium: 10mm */
+  }
+}
+
+@page {
+  /* Users should choose the correct options. */
+  size: A4 portrait; /* Paper size: A4 */
+  margin: 0.5in; /* Margins: Default */
+}
+
+/* 0.5in + 21cm + 0.5in = 23.54cm */
+@media screen and (min-width: 23.54cm) {
+  body {
+    margin: 0.75in auto;
+  }
 }
 
 @media print {
-	h1,
-	h2,
-	h3 {
-		/* Should be supported, but does not work in Firefox 121.0. */
-		/* Workaround https://support.mozilla.org/en/questions/1306825 */
-		break-after: avoid;
-	}
-	ol,
-	ul {
-		break-inside: avoid;
-	}
+  h1,
+  h2,
+  h3 {
+    /* Should be supported, but does not work in Firefox 121.0. */
+    /* Workaround https://support.mozilla.org/en/questions/1306825 */
+    break-after: avoid;
+  }
+  ol,
+  ul {
+    break-inside: avoid;
+  }
 }

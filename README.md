@@ -14,6 +14,9 @@ CSS for paper. Style HTML for printing and PDF conversion.
 
 The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly).
 
+> [!IMPORTANT]  
+> Inform users to set the (Paper size: A4) and (Margins: Default) in the print dialog.
+
 > [!NOTE]  
 > This package follows the semantic versioning. To manually bump the stylesheet version, and to avoid unwanted breaking changes, please set the major version in the jsDelivr URL.
 
