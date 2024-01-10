@@ -20,13 +20,21 @@ strong {
 h2::before {
 	content: "";
 	display: block;
-	border-bottom: 1px solid lightgray;
-	margin: 0.83em 0; /* user-agent */
 }
 hr {
 	height: 0;
-	color: lightgray;
-	margin: 0.83em 0; /* match h2::before */
+	color: inherit;
+	/* <hr> user-agent styles */
+	/* border-style: inset; */
+	/* border-width: 1px; */
+	border: 0;
+}
+h2::before,
+hr {
+	/* <h2> user-agent style */
+	/* margin-block-start: 0.83em */
+	margin: 0.83em 0;
+	border-top: 1px solid lightgray;
 }
 ol,
 ul {
