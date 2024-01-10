@@ -17,6 +17,9 @@ strong {
 
 /* Common Styles */
 
+body > *:first-child {
+	margin-top: 0;
+}
 h2::before {
 	content: "";
 	display: block;
