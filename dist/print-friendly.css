@@ -6,7 +6,10 @@
 	box-sizing: border-box;
 }
 html {
-	line-height: 1.4;
+	/* Default in Tailwind CSS, Bootstrap, etc. */
+	/* Reference https://tailwindcss.com/docs/preflight */
+	/* Reference https://getbootstrap.com/docs/5.3/customize/css-variables */
+	line-height: 1.5;
 }
 body {
 	margin: 0;
