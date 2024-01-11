@@ -36,6 +36,8 @@ strong {
 		--page-multiplier: 0.5;
 	}
 	body {
+		width: 100%;
+		max-width: 21cm;
 		height: fit-content; /* Required in Chrome 120.0 */
 		margin: calc(var(--page-gap-y) * var(--page-multiplier)) auto;
 	}
@@ -57,11 +59,11 @@ strong {
 	}
 }
 
-/* 1cm = 37.8px, 21cm = 793.8px */
-@media screen and (min-width: 21cm) {
+/* 1cm = 37.8px, 23cm = 869.4px */
+/* Applied from viewport width of 870px. */
+@media screen and (min-width: 23cm) {
 	body {
 		--page-multiplier: 1;
-		max-width: 21cm;
 	}
 	body > .page {
 		min-height: 29.7cm;
