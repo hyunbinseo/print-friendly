@@ -4,6 +4,7 @@
 	box-sizing: border-box;
 }
 html {
+	font-family: system-ui, sans-serif;
 	/* Default in Tailwind CSS, Bootstrap, etc. */
 	/* Reference https://tailwindcss.com/docs/preflight */
 	/* Reference https://getbootstrap.com/docs/5.3/customize/css-variables */
