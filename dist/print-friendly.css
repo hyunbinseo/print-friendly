@@ -23,10 +23,6 @@ strong {
 body > *:first-child {
 	margin-top: 0;
 }
-h2::before {
-	content: "";
-	display: block;
-}
 hr {
 	height: 0;
 	color: inherit;
@@ -34,17 +30,7 @@ hr {
 	/* border-style: inset; */
 	/* border-width: 1px; */
 	border: 0;
-}
-h2::before,
-hr {
-	/* <h2> user-agent style */
-	/* margin-block-start: 0.83em */
-	margin: 0.83em 0;
 	border-top: 1px solid lightgray;
-}
-ol,
-ul {
-	padding-inline-start: 16px;
 }
 
 /* Media Queries */
@@ -81,19 +67,5 @@ ul {
 @media screen and (min-width: 23.54cm) {
 	body {
 		margin: 0.75in auto;
-	}
-}
-
-@media print {
-	h1,
-	h2,
-	h3 {
-		/* Should be supported, but does not work in Firefox 121.0. */
-		/* Workaround https://support.mozilla.org/en/questions/1306825 */
-		break-after: avoid;
-	}
-	ol,
-	ul {
-		break-inside: avoid;
 	}
 }
