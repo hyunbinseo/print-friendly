@@ -18,8 +18,9 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- print-friendly 스타일 시트를 추가합니다. -->
     <!-- 주 버전이 0으로 설정되어 있는 URL입니다. -->
     <link

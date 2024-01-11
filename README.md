@@ -24,8 +24,9 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Add print-friendly stylesheet. -->
     <!-- The major version is set to 0. -->
     <link
