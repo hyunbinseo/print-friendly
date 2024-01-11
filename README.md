@@ -28,15 +28,25 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Add print-friendly stylesheet. -->
-    <!-- The major version is set to 0. -->
+    <!-- The version is set to 0.1. -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/print-friendly@0/dist/print-friendly.css"
+      href="https://cdn.jsdelivr.net/npm/print-friendly@0.1/dist/print-friendly.css"
     />
     <!-- (Optional) Set custom font-family. -->
   </head>
   <body>
-    <!-- Add content here. -->
+    <!-- Elements without the .page class are visible on screen, hidden from print. -->
+    <header>
+      <!-- e.g. Guide users to print the page. -->
+    </header>
+
+    <!-- Multiple .page elements can be added. -->
+    <div class="page"></div>
+    <!-- Gap is shown between the .page elements. -->
+    <div class="page">
+      <!-- Always printed starting on a new page. -->
+    </div>
   </body>
 </html>
 ```

@@ -22,15 +22,37 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- print-friendly 스타일 시트를 추가합니다. -->
-    <!-- 주 버전이 0으로 설정되어 있는 URL입니다. -->
+    <!-- 버전이 0.1로 설정되어 있는 URL입니다. -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/print-friendly@0/dist/print-friendly.css"
+      href="https://cdn.jsdelivr.net/npm/print-friendly@0.1/dist/print-friendly.css"
     />
     <!-- (선택) font-family 스타일을 지정합니다. -->
   </head>
   <body>
-    <!-- 이곳에 콘텐츠를 추가합니다. -->
+    <!-- .page 클래스가 없는 요소들은 화면에서만 보이고 인쇄되지 않습니다. -->
+    <header>
+      <!-- 예시) 사용자들에게 인쇄 방법을 안내 -->
+    </header>
+
+    <!-- .page 요소를 여러 개 추가할 수 있습니다. -->
+    <div class="page"></div>
+    <!-- .page 요소 간에는 구분을 위해 간격이 표시됩니다. -->
+    <div class="page">
+      <!-- .page 요소는 언제나 새로운 페이지에서 인쇄됩니다. -->
+    </div>
   </body>
 </html>
+```
+
+## 유용한 스타일
+
+```css
+ol,
+ul {
+  /* 개요 왼쪽 여백 기본값 */
+  /* 한컴오피스 한글: 0pt 또는 10pt */
+  /* 웹 브라우저: 40px (단위 상이함) */
+  padding-inline-start: 16px;
+}
 ```
