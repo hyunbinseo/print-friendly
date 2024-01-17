@@ -33,7 +33,10 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/print-friendly@0.1/dist/print-friendly.css"
     />
-    <!-- (Optional) Set custom font-family. -->
+    <style>
+      /* Additional styling goes here. */
+      /* Reference the following section. */
+    </style>
   </head>
   <body>
     <!-- Elements without the .page class are visible on screen, hidden from print. -->
@@ -49,6 +52,55 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
     </div>
   </body>
 </html>
+```
+
+## Additional Styling
+
+### Remove left margin on lists.
+
+```css
+ol,
+ul {
+  /* Browser default is 40px. */
+  padding-inline-start: 16px;
+}
+```
+
+### Add image watermark to pages.
+
+Printed even when the `Background graphics` is unchecked.
+
+```css
+/* To show the watermark on the screen, remove the @media print at-rule. */
+@media print {
+  .page {
+    position: relative;
+  }
+  .page::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Set the following values. */
+    content: url("/path-to-image"); /* SVG works. */
+    /* Vertical margin should be implicitly set. */
+    /* Horizontally centered using auto margin. */
+    margin: 10cm auto; /* vertical horizontal */
+    width: 10cm;
+    opacity: 0.1;
+  }
+}
+```
+
+### Reduce base font-size in print.
+
+```css
+@media print {
+  .page {
+    /* Browser default is 16px. */
+    font-size: 12px;
+  }
+}
 ```
 
 ## 🚧 Work in Progress

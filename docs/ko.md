@@ -27,7 +27,10 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/print-friendly@0.1/dist/print-friendly.css"
     />
-    <!-- (선택) font-family 스타일을 지정합니다. -->
+    <style>
+      /* 추가적인 스타일을 입력하는 곳입니다. */
+      /* 다음 장을 참고합니다. */
+    </style>
   </head>
   <body>
     <!-- .page 클래스가 없는 요소들은 화면에서만 보이고 인쇄되지 않습니다. -->
@@ -45,14 +48,54 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
 </html>
 ```
 
-## 유용한 스타일
+## 추가적인 스타일
+
+### 개요 왼쪽 여백 없애기
+
+한컴오피스 한글에서는 문단 모양 / 여백에서 지정하는 값입니다.
 
 ```css
 ol,
 ul {
-  /* 개요 왼쪽 여백 기본값 */
-  /* 한컴오피스 한글: 0pt 또는 10pt */
-  /* 웹 브라우저: 40px (단위 상이함) */
+  /* 한컴오피스 한글 기본값은 0pt 또는 10pt */
+  /* 웹 브라우저 기본값은 40px (단위 상이함) */
   padding-inline-start: 16px;
+}
+```
+
+### 이미지 워터마크 추가하기
+
+`배경 그래픽` 항목이 체크되어 있지 않아도 인쇄됩니다.
+
+```css
+/* 워터마크를 화면에서도 표시하려면 @media print 규칙을 제거합니다. */
+@media print {
+  .page {
+    position: relative;
+  }
+  .page::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* 다음 값들을 지정합니다. */
+    content: url("/path-to-image"); /* SVG 사용 가능 */
+    /* 세로 여백 값은 명시적으로 지정해야 합니다. */
+    /* 가로 방향으로 중앙 정렬되어 있습니다. */
+    margin: 10cm auto; /* 세로 가로 */
+    width: 10cm;
+    opacity: 0.1;
+  }
+}
+```
+
+### 인쇄 시 기본 글자 크기 줄이기
+
+```css
+@media print {
+  .page {
+    /* 웹 브라우저 기본값은 16px */
+    font-size: 12px;
+  }
 }
 ```
