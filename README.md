@@ -4,12 +4,6 @@ Responsive CSS for screen and paper. Optimized for printing and PDF conversion.
 
 [한국어](/docs/ko.md)
 
-## 🚧 Features
-
-- [x] CSS / Stylesheet
-- [ ] Node.js CLI Tool
-- [ ] VS Code Extension
-
 ## Using the Stylesheet
 
 ### HTML
@@ -78,15 +72,11 @@ Printed even when the `Background graphics` is unchecked.
   }
   .page::after {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    /* Set the following values. */
-    content: url("/path-to-image"); /* SVG works. */
-    /* Vertical margin should be implicitly set. */
-    /* Horizontally centered using auto margin. */
-    margin: 10cm auto; /* vertical horizontal */
-    width: 10cm;
+    top: 50%;
+    left: 50%;
+    /* Use the scale() function to set the size. */
+    transform: translate(-50%, -50%) scale(0.5);
+    content: url("/path-to-image");
     opacity: 0.1;
   }
 }
@@ -102,8 +92,3 @@ Printed even when the `Background graphics` is unchecked.
   }
 }
 ```
-
-## 🚧 Work in Progress
-
-- [ ] Dark theme
-- [ ] Styled table

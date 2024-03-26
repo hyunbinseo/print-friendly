@@ -75,15 +75,11 @@ ul {
   }
   .page::after {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    /* 다음 값들을 지정합니다. */
-    content: url("/path-to-image"); /* SVG 사용 가능 */
-    /* 세로 여백 값은 명시적으로 지정해야 합니다. */
-    /* 가로 방향으로 중앙 정렬되어 있습니다. */
-    margin: 10cm auto; /* 세로 가로 */
-    width: 10cm;
+    top: 50%;
+    left: 50%;
+    /* scale() 함수를 사용해 크기를 조절합니다. */
+    transform: translate(-50%, -50%) scale(0.5);
+    content: url("/path-to-image");
     opacity: 0.1;
   }
 }
