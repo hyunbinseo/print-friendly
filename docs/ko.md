@@ -14,35 +14,34 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
 > 인쇄 대화상자에서 (용지 크기: A4) 그리고 (여백: 기본) 값을 설정하도록 사용자에게 안내하세요.
 
 > [!NOTE]
-> 이 패키지는 유의적(semantic) 버전을 따릅니다. 직접 버전 번호를 올릴 수 있도록, 그리고 의도치 않은 주요(breaking) 사항들을 피하기 위해 반드시 jsDelivr URL에 주(major) 버전을 지정해 두세요.
+> 이 패키지는 유의적(semantic) 버전을 따릅니다. 의도치 않은 주요(breaking) 변경사항을 피하기 위해 jsDelivr URL에 주(major) 버전을 지정해 두세요.
 
 ```html
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- print-friendly 스타일 시트를 추가합니다. -->
-    <!-- 버전이 0.1로 설정되어 있는 URL입니다. -->
+    <!-- print-friendly 스타일 시트를 추가합니다. 0.2 버전이 지정돼 있습니다. -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/print-friendly@0.1/dist/print-friendly.css"
+      href="https://cdn.jsdelivr.net/npm/print-friendly@0.2/dist/print-friendly.css"
     />
     <style>
-      /* 추가적인 스타일을 입력하는 곳입니다. */
-      /* 다음 장을 참고합니다. */
+      /* 추가적인 스타일을 입력하는 곳입니다. 다음 장을 참고합니다. */
     </style>
   </head>
   <body>
-    <!-- .page 클래스가 없는 요소들은 화면에서만 보이고 인쇄되지 않습니다. -->
-    <header>
-      <!-- 예시) 사용자들에게 인쇄 방법을 안내 -->
-    </header>
-
-    <!-- .page 요소를 여러 개 추가할 수 있습니다. -->
-    <div class="page"></div>
-    <!-- .page 요소 간에는 구분을 위해 간격이 표시됩니다. -->
-    <div class="page">
-      <!-- .page 요소는 언제나 새로운 페이지에서 인쇄됩니다. -->
+    <div>
+      <!-- .page 클래스가 없는 요소들은 화면에서만 보이고 인쇄되지 않습니다. -->
+      <header>
+        <!-- 예시) 사용자들에게 인쇄 방법을 안내 -->
+      </header>
+      <!-- .page 요소 여러 개를 연달아 추가할 수 있습니다. -->
+      <div class="page"></div>
+      <!-- .page 요소 간에는 페이지 간격이 표시됩니다. -->
+      <div class="page">
+        <!-- 언제나 새로운 페이지에서 인쇄됩니다. -->
+      </div>
     </div>
   </body>
 </html>

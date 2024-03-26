@@ -1,14 +1,15 @@
-*,
-::before,
-::after {
-	box-sizing: border-box;
+/* Microsoft Word's narrow margin is 0.5in (1.27cm) */
+
+@page {
+	/* CSS variables are not cascaded from :root, etc. */
+	/* These options should be set in the print dialog. */
+	size: A4 portrait; /* Paper size: A4 */
+	margin: 0.5in; /* Margins: Default */
 }
+
 html {
-	font-family: system-ui, sans-serif;
-	/* Default in Tailwind CSS, Bootstrap, etc. */
-	/* Reference https://tailwindcss.com/docs/preflight */
-	/* Reference https://getbootstrap.com/docs/5.3/customize/css-variables */
-	line-height: 1.5;
+	--page-padding: 0.5in;
+	--page-gap-y: 0.75in;
 }
 body {
 	margin: 0;
@@ -18,23 +19,13 @@ hr {
 	color: inherit;
 	border-style: solid;
 }
-strong {
-	font-weight: bolder;
-}
 
 @media screen {
 	html {
+		--page-multiplier: 0.5;
 		display: flex;
 		justify-content: center;
 		background-color: lightgray;
-	}
-	body {
-		/* HWP Narrow uses 10mm or 20mm. */
-		/* Chromium uses 10mm by default. */
-		/* Microsoft Word Narrow, Firefox */
-		--page-padding: 0.5in; /* 1.27cm */
-		--page-gap-y: 0.75in;
-		--page-multiplier: 0.5;
 	}
 	body {
 		width: 100%;
@@ -42,20 +33,20 @@ strong {
 		height: fit-content; /* Required in Chrome 120.0 */
 		margin: calc(var(--page-gap-y) * var(--page-multiplier)) auto;
 	}
-	body > .page {
+	body > div > .page {
 		background-color: white;
 		padding: calc(var(--page-padding) * var(--page-multiplier));
 	}
-	body > .page + .page {
+	body > div > .page + .page {
 		margin-top: calc(var(--page-gap-y) * var(--page-multiplier));
 	}
-	body > .page > *:first-child {
+	body > div > .page > *:first-child {
 		margin-top: 0;
 	}
 }
 
 @media screen and (min-width: 640px) {
-	body {
+	html {
 		--page-multiplier: 0.75;
 	}
 }
@@ -63,26 +54,19 @@ strong {
 /* 1cm = 37.8px, 23cm = 869.4px */
 /* Applied from viewport width of 870px. */
 @media screen and (min-width: 23cm) {
-	body {
+	html {
 		--page-multiplier: 1;
 	}
-	body > .page {
+	body > div > .page {
 		min-height: 29.7cm;
 	}
 }
 
-/* CSS variables are not cascaded from :root, etc. */
-@page {
-	/* These options should be set in the print dialog. */
-	size: A4 portrait; /* Paper size: A4 */
-	margin: 0.5in; /* Margins: Default */
-}
-
 @media print {
-	body > .page {
+	body > div > .page {
 		page-break-after: always;
 	}
-	body > :not(.page) {
+	body > div > :not(.page) {
 		display: none;
 	}
 }

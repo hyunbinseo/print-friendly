@@ -14,35 +14,34 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
 > Inform users to set the (Paper size: A4) and (Margins: Default) in the print dialog.
 
 > [!NOTE]
-> This package follows the semantic versioning. To manually bump the stylesheet version, and to avoid unwanted breaking changes, please set the major version in the jsDelivr URL.
+> This package follows the semantic versioning. To avoid unwanted breaking changes, set the major version in the jsDelivr URL.
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Add print-friendly stylesheet. -->
-    <!-- The version is set to 0.1. -->
+    <!-- Add print-friendly stylesheet. The version is set to 0.2. -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/print-friendly@0.1/dist/print-friendly.css"
+      href="https://cdn.jsdelivr.net/npm/print-friendly@0.2/dist/print-friendly.css"
     />
     <style>
-      /* Additional styling goes here. */
-      /* Reference the following section. */
+      /* Additional styling goes here. Reference the following section. */
     </style>
   </head>
   <body>
-    <!-- Elements without the .page class are visible on screen, hidden from print. -->
-    <header>
-      <!-- e.g. Guide users to print the page. -->
-    </header>
-
-    <!-- Multiple .page elements can be added. -->
-    <div class="page"></div>
-    <!-- Gap is shown between the .page elements. -->
-    <div class="page">
-      <!-- Always printed starting on a new page. -->
+    <div>
+      <!-- Elements without the .page class are hidden from print. -->
+      <header>
+        <!-- e.g. Guide users to print the page. -->
+      </header>
+      <!-- Multiple .page elements can be added. -->
+      <div class="page"></div>
+      <!-- Page gap is shown between the .page elements. -->
+      <div class="page">
+        <!-- Always printed starting on a new page. -->
+      </div>
     </div>
   </body>
 </html>
