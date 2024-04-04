@@ -27,7 +27,7 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
       href="https://cdn.jsdelivr.net/npm/print-friendly@0.2/dist/print-friendly.css"
     />
     <style>
-      /* 추가적인 스타일을 입력하는 곳입니다. 다음 장을 참고합니다. */
+      /* print-friendly 관련 추가 스타일. 다음 장을 참고합니다. */
     </style>
   </head>
   <body>
@@ -78,7 +78,7 @@ ul {
     left: 50%;
     /* scale() 함수를 사용해 크기를 조절합니다. */
     transform: translate(-50%, -50%) scale(0.5);
-    content: url("/path-to-image");
+    content: url('/path-to-image');
     opacity: 0.1;
   }
 }

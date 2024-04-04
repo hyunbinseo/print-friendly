@@ -27,7 +27,7 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
       href="https://cdn.jsdelivr.net/npm/print-friendly@0.2/dist/print-friendly.css"
     />
     <style>
-      /* Additional styling goes here. Reference the following section. */
+      /* Additional styling for print-friendly. Reference the following section. */
     </style>
   </head>
   <body>
@@ -75,7 +75,7 @@ Printed even when the `Background graphics` is unchecked.
     left: 50%;
     /* Use the scale() function to set the size. */
     transform: translate(-50%, -50%) scale(0.5);
-    content: url("/path-to-image");
+    content: url('/path-to-image');
     opacity: 0.1;
   }
 }
