@@ -4,26 +4,15 @@
 	--page-width: 21cm;
 	--page-height: 29.7cm;
 	--page-min-height: auto;
-	--page-padding: 0.5in;
-	--page-gap-y: 0.75in;
+	--page-padding: 0.25in;
+	--page-gap-y: 0.5in;
 }
 
-@media screen {
+@media screen and (min-width: 21cm) {
 	:root {
-		--page-multiplier: 0.5;
-	}
-}
-
-@media screen and (min-width: 640px) {
-	:root {
-		--page-multiplier: 0.75;
-	}
-}
-
-@media screen and (min-width: 23cm) {
-	:root {
-		--page-multiplier: 1;
 		--page-min-height: var(--page-height);
+		--page-padding: 0.5in;
+		--page-gap-y: 0.75in;
 	}
 }
 
@@ -51,18 +40,18 @@ hr {
 	body {
 		width: 100%;
 		max-width: var(--page-width);
-		height: fit-content; /* Required in Chrome 120.0 */
-		margin: calc(var(--page-gap-y) * var(--page-multiplier)) auto;
+		height: fit-content; /* Chrome 120.0 */
+		margin: var(--page-gap-y) auto;
 	}
 
 	body > div > .page {
 		background-color: var(--page-color);
 		min-height: var(--page-min-height);
-		padding: calc(var(--page-padding) * var(--page-multiplier));
+		padding: var(--page-padding);
 	}
 
 	body > div > .page + .page {
-		margin-top: calc(var(--page-gap-y) * var(--page-multiplier));
+		margin-top: var(--page-gap-y);
 	}
 
 	body > div > .page > *:first-child {
