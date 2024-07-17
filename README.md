@@ -17,10 +17,7 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
 ```html
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/print-friendly@0.2/dist/print-friendly.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.3/index.css" />
   <style>
     /* Set the page size for print and screen. */
     /* Example uses A4 portrait. 21cm x 29.7cm */

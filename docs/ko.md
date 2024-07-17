@@ -17,10 +17,7 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
 ```html
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/print-friendly@0.2/dist/print-friendly.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.3/index.css" />
   <style>
     /* 인쇄 및 화면에서 사용되는 페이지 크기를 지정합니다. */
     /* 예시는 세로 방향 A4 기준입니다. 21cm x 29.7cm */
