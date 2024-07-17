@@ -1,15 +1,34 @@
-/* Microsoft Word's narrow margin is 0.5in (1.27cm) */
-
-@page {
-	/* CSS variables are not cascaded from :root, etc. */
-	/* These options should be set in the print dialog. */
-	size: A4 portrait; /* Paper size: A4 */
-	margin: 0.5in; /* Margins: Default */
-}
-
-html {
+:root {
+	--background-color: lightgray;
+	--page-color: white;
+	--page-width: 21cm;
+	--page-height: 29.7cm;
+	--page-min-height: auto;
 	--page-padding: 0.5in;
 	--page-gap-y: 0.75in;
+}
+
+@media screen {
+	:root {
+		--page-multiplier: 0.5;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	:root {
+		--page-multiplier: 0.75;
+	}
+}
+
+@media screen and (min-width: 23cm) {
+	:root {
+		--page-multiplier: 1;
+		--page-min-height: var(--page-height);
+	}
+}
+
+@page {
+	size: A4 portrait;
 }
 
 body {
@@ -24,21 +43,21 @@ hr {
 
 @media screen {
 	html {
-		--page-multiplier: 0.5;
 		display: flex;
 		justify-content: center;
-		background-color: lightgray;
+		background-color: var(--background-color);
 	}
 
 	body {
 		width: 100%;
-		max-width: 21cm;
+		max-width: var(--page-width);
 		height: fit-content; /* Required in Chrome 120.0 */
 		margin: calc(var(--page-gap-y) * var(--page-multiplier)) auto;
 	}
 
 	body > div > .page {
-		background-color: white;
+		background-color: var(--page-color);
+		min-height: var(--page-min-height);
 		padding: calc(var(--page-padding) * var(--page-multiplier));
 	}
 
@@ -48,24 +67,6 @@ hr {
 
 	body > div > .page > *:first-child {
 		margin-top: 0;
-	}
-}
-
-@media screen and (min-width: 640px) {
-	html {
-		--page-multiplier: 0.75;
-	}
-}
-
-/* 1cm = 37.8px, 23cm = 869.4px */
-/* Applied from viewport width of 870px. */
-@media screen and (min-width: 23cm) {
-	html {
-		--page-multiplier: 1;
-	}
-
-	body > div > .page {
-		min-height: 29.7cm;
 	}
 }
 
