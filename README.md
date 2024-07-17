@@ -6,45 +6,63 @@ Responsive CSS for screen and paper. Optimized for printing and PDF conversion.
 
 ## Using the Stylesheet
 
-### HTML
-
 The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly).
 
 > [!IMPORTANT]
-> Inform users to set the (Paper size: A4) and (Margins: Default) in the print dialog.
+> Inform users to set the (Paper size) and (Margins: Default) in the print dialog.
 
 > [!NOTE]
 > This package follows the semantic versioning. To avoid unwanted breaking changes, set the major version in the jsDelivr URL.
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Add print-friendly stylesheet. The version is set to 0.2. -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/print-friendly@0.2/dist/print-friendly.css"
-    />
-    <style>
-      /* Additional styling for print-friendly. Reference the following section. */
-    </style>
-  </head>
-  <body>
-    <div>
-      <!-- Elements without the .page class are hidden from print. -->
-      <header>
-        <!-- e.g. Guide users to print the page. -->
-      </header>
-      <!-- Multiple .page elements can be added. -->
-      <div class="page"></div>
-      <!-- Page gap is shown between the .page elements. -->
-      <div class="page">
-        <!-- Always printed starting on a new page. -->
-      </div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/print-friendly@0.2/dist/print-friendly.css"
+  />
+  <style>
+    /* Set the page size for print and screen. */
+    /* Example uses A4 portrait. 21cm x 29.7cm */
+    /* Microsoft Word's Narrow margin is 0.5in */
+    @page {
+      size: A4 portrait;
+      margin: 0.5in;
+    }
+    @media screen {
+      :root {
+        --page-width: 21cm;
+        --page-height: 29.7cm;
+        --page-padding: 0.25in;
+        --page-gap-y: 0.5in;
+      }
+    }
+    @media screen and (min-width: 21cm) {
+      :root {
+        --page-min-height: var(--page-height);
+        --page-padding: 0.5in;
+        --page-gap-y: 0.75in;
+      }
+    }
+  </style>
+</head>
+```
+
+```html
+<body>
+  <div>
+    <!-- Elements without the .page class are hidden from print. -->
+    <header>
+      <!-- e.g. Guide users to print the page. -->
+    </header>
+    <!-- Multiple .page elements can be added. -->
+    <div class="page"></div>
+    <!-- Page gap is shown between the .page elements. -->
+    <div class="page">
+      <!-- Always printed starting on a new page. -->
     </div>
-  </body>
-</html>
+  </div>
+</body>
 ```
 
 ## Additional Styling
