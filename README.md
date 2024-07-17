@@ -1,6 +1,8 @@
 # print-friendly
 
-Responsive CSS for screen and paper. Optimized for printing and PDF conversion.
+Responsive CSS for screen and paper. Optimized for printing and PDF conversion. [Demo]
+
+[demo]: https://demo.hyunbin.page/print-friendly
 
 [한국어](/docs/ko.md)
 

@@ -1,6 +1,8 @@
 # print-friendly
 
-화면과 종이를 위한 반응형 CSS. 인쇄와 PDF 변환에 최적화 돼있습니다.
+화면과 종이를 위한 반응형 CSS. 인쇄와 PDF 변환에 최적화 돼있습니다. [시연]
+
+[시연]: https://demo.hyunbin.page/print-friendly
 
 [English](/#readme)
 
