@@ -1,11 +1,19 @@
 {
 	"name": "print-friendly",
-	"version": "0.3.2",
 	"description": "Convert a markdown file to a print-ready, styled HTML file",
+	"version": "0.3.2",
+	"type": "module",
+	"scripts": {
+		"version": "node scripts/version && git add .",
+		"postversion": "git push && git push --tags"
+	},
+	"files": [
+		"index.css"
+	],
 	"main": "index.css",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/hyunbinseo/print-friendly.git"
+	"devDependencies": {
+		"@types/node": "^22.10.2",
+		"prettier": "^3.4.2"
 	},
 	"keywords": [
 		"html",
@@ -18,12 +26,13 @@
 	],
 	"author": "Hyunbin Seo",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hyunbinseo/print-friendly.git"
+	},
 	"bugs": {
 		"url": "https://github.com/hyunbinseo/print-friendly/issues"
 	},
 	"homepage": "https://github.com/hyunbinseo/print-friendly#readme",
-	"files": [
-		"index.css"
-	],
-	"packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
+	"packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
 }
