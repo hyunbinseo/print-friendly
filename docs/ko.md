@@ -30,7 +30,9 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
       margin: 0.5in;
     }
     @media screen {
-      :root {
+      .page-container {
+        --background-color: lightgray;
+        --page-color: white;
         --page-width: 21cm;
         --page-height: 29.7cm;
         --page-padding: 0.25in;
@@ -38,7 +40,7 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
       }
     }
     @media screen and (min-width: 21cm) {
-      :root {
+      .page-container {
         --page-min-height: var(--page-height);
         --page-padding: 0.5in;
         --page-gap-y: 0.75in;
@@ -49,20 +51,18 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
 ```
 
 ```html
-<body>
-  <div>
-    <!-- .page 클래스가 없는 요소들은 화면에서만 보이고 인쇄되지 않습니다. -->
-    <header>
-      <!-- 예시) 사용자들에게 인쇄 방법을 안내 -->
-    </header>
-    <!-- .page 요소 여러 개를 연달아 추가할 수 있습니다. -->
-    <div class="page"></div>
-    <!-- .page 요소 간에는 페이지 간격이 표시됩니다. -->
-    <div class="page">
-      <!-- 언제나 새로운 페이지에서 인쇄됩니다. -->
-    </div>
+<div class="page-container">
+  <!-- .page 클래스가 없는 요소들은 화면에서만 보이고 인쇄되지 않습니다. -->
+  <header>
+    <!-- 예시) 사용자들에게 인쇄 방법을 안내 -->
+  </header>
+  <!-- .page 요소 여러 개를 연달아 추가할 수 있습니다. -->
+  <div class="page"></div>
+  <!-- .page 요소 간에는 페이지 간격이 표시됩니다. -->
+  <div class="page">
+    <!-- 언제나 새로운 페이지에서 인쇄됩니다. -->
   </div>
-</body>
+</div>
 ```
 
 ## 추가적인 스타일

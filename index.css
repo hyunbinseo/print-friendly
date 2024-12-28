@@ -1,57 +1,38 @@
-:root {
-	--background-color: lightgray;
-	--page-color: white;
-}
-
-body {
-	margin: 0;
-}
-
-hr {
-	height: 0;
-	color: inherit;
-	border-style: solid;
-}
-
 @media screen {
-	:root {
-		--page-min-height: auto;
-	}
-
-	html {
-		display: flex;
-		justify-content: center;
+	.page-container {
+		position: fixed;
+		inset: 0;
 		background-color: var(--background-color);
+		padding: var(--page-gap-y) 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow-y: auto;
 	}
 
-	body {
-		width: 100%;
-		max-width: var(--page-width);
-		height: fit-content; /* Chrome 120.0 */
-		margin: var(--page-gap-y) auto;
-	}
-
-	body > div > .page {
+	.page-container > .page {
+		flex-shrink: 0;
 		background-color: var(--page-color);
-		min-height: var(--page-min-height);
+		width: min(var(--page-width), 100%);
+		min-height: var(--page-min-height, auto);
 		padding: var(--page-padding);
 	}
 
-	body > div > .page + .page {
+	.page-container > .page + .page {
 		margin-top: var(--page-gap-y);
 	}
 
-	body > div > .page > *:first-child {
+	.page-container > .page > *:first-child {
 		margin-top: 0;
 	}
 }
 
 @media print {
-	body > div > .page {
+	.page-container > .page {
 		page-break-after: always;
 	}
 
-	body > div > :not(.page) {
+	.page-container > :not(.page) {
 		display: none;
 	}
 }

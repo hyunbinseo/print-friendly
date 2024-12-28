@@ -29,7 +29,9 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
       margin: 0.5in;
     }
     @media screen {
-      :root {
+      .page-container {
+        --background-color: lightgray;
+        --page-color: white;
         --page-width: 21cm;
         --page-height: 29.7cm;
         --page-padding: 0.25in;
@@ -37,7 +39,7 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
       }
     }
     @media screen and (min-width: 21cm) {
-      :root {
+      .page-container {
         --page-min-height: var(--page-height);
         --page-padding: 0.5in;
         --page-gap-y: 0.75in;
@@ -48,20 +50,18 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
 ```
 
 ```html
-<body>
-  <div>
-    <!-- Elements without the .page class are hidden from print. -->
-    <header>
-      <!-- e.g. Guide users to print the page. -->
-    </header>
-    <!-- Multiple .page elements can be added. -->
-    <div class="page"></div>
-    <!-- Page gap is shown between the .page elements. -->
-    <div class="page">
-      <!-- Always printed starting on a new page. -->
-    </div>
+<div class="page-container">
+  <!-- Elements without the .page class are hidden from print. -->
+  <header>
+    <!-- e.g. Guide users to print the page. -->
+  </header>
+  <!-- Multiple .page elements can be added. -->
+  <div class="page"></div>
+  <!-- Page gap is shown between the .page elements. -->
+  <div class="page">
+    <!-- Always printed starting on a new page. -->
   </div>
-</body>
+</div>
 ```
 
 ## Additional Styling
