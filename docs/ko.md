@@ -12,7 +12,7 @@ CDN
 
 ```html
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.3/index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.4/index.css" />
 </head>
 ```
 
