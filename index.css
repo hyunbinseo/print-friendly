@@ -10,10 +10,13 @@
 		overflow-y: auto;
 	}
 
+	.page-container > * {
+		width: min(var(--page-width), 100%);
+	}
+
 	.page-container > .page {
 		flex-shrink: 0;
 		background-color: var(--page-color);
-		width: min(var(--page-width), 100%);
 		min-height: var(--page-min-height, auto);
 		padding: var(--page-padding);
 	}
