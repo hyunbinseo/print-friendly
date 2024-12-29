@@ -21,10 +21,6 @@
 	.page-container > .page + .page {
 		margin-top: var(--page-gap-y);
 	}
-
-	.page-container > .page > *:first-child {
-		margin-top: 0;
-	}
 }
 
 @media print {

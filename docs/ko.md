@@ -46,6 +46,9 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
         --page-gap-y: 0.75in;
       }
     }
+    .page > *:first-child {
+      margin-top: 0;
+    }
   </style>
 </head>
 ```

@@ -45,6 +45,9 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
         --page-gap-y: 0.75in;
       }
     }
+    .page > *:first-child {
+      margin-top: 0;
+    }
   </style>
 </head>
 ```
