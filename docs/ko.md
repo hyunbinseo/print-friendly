@@ -6,20 +6,35 @@
 
 [English](/#readme)
 
-## 스타일 시트 사용
+## 설치 방법
 
-CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) 등의 CDN에 호스팅 돼있습니다.
+CDN
+
+```html
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.3/index.css" />
+</head>
+```
+
+Node.js
+
+```shell
+npm i print-friendly
+```
+
+```js
+import 'print-friendly';
+import 'print-friendly/index.css'; // 전체 경로
+```
+
+## 사용 방법
 
 > [!IMPORTANT]
 > 인쇄 대화상자에서 (용지 크기) 그리고 (여백: 기본) 값을 설정하도록 사용자에게 안내하세요.
 
-> [!NOTE]
-> 이 패키지는 유의적(semantic) 버전을 따릅니다. 의도치 않은 주요(breaking) 변경사항을 피하기 위해 jsDelivr URL에 주(major) 버전을 지정해 두세요.
-
 ```html
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.3/index.css" />
   <style>
     /* 인쇄 및 화면에서 사용되는 페이지 크기를 지정합니다. */
     /* 예시는 세로 방향 A4 기준입니다. 21cm x 29.7cm */
@@ -51,21 +66,20 @@ CSS 파일은 [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly) �
     }
   </style>
 </head>
-```
-
-```html
-<div class="page-container">
-  <!-- .page 클래스가 없는 요소들은 화면에서만 보이고 인쇄되지 않습니다. -->
-  <header>
-    <!-- 예시) 사용자들에게 인쇄 방법을 안내 -->
-  </header>
-  <!-- .page 요소 여러 개를 연달아 추가할 수 있습니다. -->
-  <div class="page"></div>
-  <!-- .page 요소 간에는 페이지 간격이 표시됩니다. -->
-  <div class="page">
-    <!-- 언제나 새로운 페이지에서 인쇄됩니다. -->
+<body>
+  <div class="page-container">
+    <!-- .page 클래스가 없는 요소들은 화면에서만 보이고 인쇄되지 않습니다. -->
+    <header>
+      <!-- 예시) 사용자들에게 인쇄 방법을 안내 -->
+    </header>
+    <!-- .page 요소 여러 개를 연달아 추가할 수 있습니다. -->
+    <div class="page"></div>
+    <!-- .page 요소 간에는 페이지 간격이 표시됩니다. -->
+    <div class="page">
+      <!-- 언제나 새로운 페이지에서 인쇄됩니다. -->
+    </div>
   </div>
-</div>
+</body>
 ```
 
 ## 추가적인 스타일

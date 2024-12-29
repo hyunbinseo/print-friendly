@@ -6,20 +6,35 @@ Responsive CSS for screen and paper. Optimized for printing and PDF conversion. 
 
 [한국어](/docs/ko.md)
 
-## Using the Stylesheet
+## Installation
 
-The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/package/npm/print-friendly).
+CDN
+
+```html
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.3/index.css" />
+</head>
+```
+
+Node.js
+
+```shell
+npm i print-friendly
+```
+
+```js
+import 'print-friendly';
+import 'print-friendly/index.css'; // full-path
+```
+
+## Usage
 
 > [!IMPORTANT]
 > Inform users to set the (Paper size) and (Margins: Default) in the print dialog.
 
-> [!NOTE]
-> This package follows the semantic versioning. To avoid unwanted breaking changes, set the major version in the jsDelivr URL.
-
 ```html
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/print-friendly@0.3/index.css" />
   <style>
     /* Set the page size for print and screen. */
     /* Example uses A4 portrait. 21cm x 29.7cm */
@@ -50,21 +65,20 @@ The CSS file is hosted on CDNs such as [jsDelivr](https://www.jsdelivr.com/packa
     }
   </style>
 </head>
-```
-
-```html
-<div class="page-container">
-  <!-- Elements without the .page class are hidden from print. -->
-  <header>
-    <!-- e.g. Guide users to print the page. -->
-  </header>
-  <!-- Multiple .page elements can be added. -->
-  <div class="page"></div>
-  <!-- Page gap is shown between the .page elements. -->
-  <div class="page">
-    <!-- Always printed starting on a new page. -->
+<body>
+  <div class="page-container">
+    <!-- Elements without the .page class are hidden from print. -->
+    <header>
+      <!-- e.g. Guide users to print the page. -->
+    </header>
+    <!-- Multiple .page elements can be added. -->
+    <div class="page"></div>
+    <!-- Page gap is shown between the .page elements. -->
+    <div class="page">
+      <!-- Always printed starting on a new page. -->
+    </div>
   </div>
-</div>
+</body>
 ```
 
 ## Additional Styling
