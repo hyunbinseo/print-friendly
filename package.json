@@ -1,7 +1,7 @@
 {
 	"name": "print-friendly",
 	"description": "Convert a markdown file to a print-ready, styled HTML file",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"type": "module",
 	"scripts": {
 		"format": "prettier --write .",
