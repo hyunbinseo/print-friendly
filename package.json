@@ -9,9 +9,14 @@
 		"postversion": "git push && git push --tags"
 	},
 	"files": [
-		"index.css"
+		"index.css",
+		"index.d.ts"
+	],
+	"sideEffects": [
+		"*.css"
 	],
 	"main": "index.css",
+	"types": "index.d.ts",
 	"devDependencies": {
 		"@types/node": "^24.12.2",
 		"prettier": "^3.8.1"
