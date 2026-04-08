@@ -4,7 +4,8 @@
 	"version": "0.4.1",
 	"type": "module",
 	"scripts": {
-		"version": "node scripts/version && git add .",
+		"format": "prettier --write .",
+		"version": "node cli/version && git add .",
 		"postversion": "git push && git push --tags"
 	},
 	"files": [
@@ -12,8 +13,8 @@
 	],
 	"main": "index.css",
 	"devDependencies": {
-		"@types/node": "^22.10.2",
-		"prettier": "^3.4.2"
+		"@types/node": "^24.12.2",
+		"prettier": "^3.8.1"
 	},
 	"keywords": [
 		"html",
@@ -34,5 +35,5 @@
 		"url": "https://github.com/hyunbinseo/print-friendly/issues"
 	},
 	"homepage": "https://github.com/hyunbinseo/print-friendly#readme",
-	"packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
+	"packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
 }
